@@ -25,7 +25,7 @@ Let's first import all the packages that you will need during this assignment. (
 1 - Forward propagation for the basic Recurrent Neural Network
 The basic RNN that you will implement has the structure below. In this example,  Tx=TyTx=Ty .
 
-Figure 1: Basic RNN model (refer images)
+Figure 1: Basic RNN model (refer RNN1.png)
 
 Here's how you can implement an RNN:
 
@@ -40,7 +40,7 @@ A Recurrent neural network can be seen as the repetition of a single cell. You a
 
 Figure 2: Basic RNN cell. Takes as input  x⟨t⟩  (current input) and  a⟨t−1⟩  (previous hidden state containing information from the past), and outputs  a⟨t⟩  which is given to the next RNN cell and also used to predict  y⟨t⟩ 
 
-Exercise: Implement the RNN-cell described in Figure (2).  (refer images)
+Exercise: Implement the RNN-cell described in Figure (2).  (refer RNN2.png)
 
 Instructions:
 
@@ -54,7 +54,7 @@ We will vectorize over  mm  examples. Thus,  x⟨t⟩  will have dimension  (nx,
 You can see an RNN as the repetition of the cell you've just built. If your input sequence of data is carried over 10 time steps, then you will copy the RNN cell 10 times. Each cell takes as input the hidden state from the previous cell ( a⟨t−1⟩ ) and the current time-step's input data ( x⟨t⟩ ). It outputs a hidden state ( a⟨t⟩ ) and a prediction ( y⟨t⟩) for this time-step.
 
 Figure 3: Basic RNN. The input sequence  x=(x⟨1⟩,x⟨2⟩,...,x⟨Tx⟩)  is carried over  Tx time steps. The network outputs  y=(y⟨1⟩,y⟨2⟩,...,y⟨Tx⟩) .
-Exercise: Code the forward propagation of the RNN described in Figure (3). (refer images)
+Exercise: Code the forward propagation of the RNN described in Figure (3). (refer RNN3.png)
 
 Instructions:
 
@@ -74,7 +74,7 @@ In the next part, you will build a more complex LSTM model, which is better at a
 2 - Long Short-Term Memory (LSTM) network
 This following figure shows the operations of an LSTM-cell. 
 
-Figure 4: LSTM-cell. This tracks and updates a "cell state" or memory variable  c⟨t⟩  at every time-step, which can be different from  a⟨t⟩ .  (refer images)
+Figure 4: LSTM-cell. This tracks and updates a "cell state" or memory variable  c⟨t⟩  at every time-step, which can be different from  a⟨t⟩ .  (refer RNN4.png)
 
 Similar to the RNN example above, you will start by implementing the LSTM cell for a single time-step. Then you can iteratively call it from inside a for-loop to have it process an input with  Tx time-steps.
 
@@ -122,7 +122,7 @@ Compute the prediction y⟨t⟩. You can use softmax() (provided).  (see rnn.py)
 
 2.2 - Forward pass for LSTM
 Now that you have implemented one step of an LSTM, you can now iterate this over this using a for-loop to process a sequence of  Tx inputs.  
-Figure 4: LSTM over multiple time-steps.    (refer images)
+Figure 4: LSTM over multiple time-steps.    (refer RNN5.png)
 
 Exercise: Implement lstm_forward() to run an LSTM over  Tx  time-steps.
 
